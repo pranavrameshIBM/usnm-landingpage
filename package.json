@@ -9,8 +9,8 @@
         "build:scripts": "node scripts/build-scripts.js",
         "build:scss": "node scripts/build-scss.js",
         "clean": "node scripts/clean.js",
-        "start": "npm run build && node scripts/start.js",
-        "start:debug": "npm run build && node scripts/start-debug.js"
+        "start:debug": "npm run build && node scripts/start-debug.js",
+        "start": "serve dist -l 8080"
     },
     "description": "A small business HTML template built with Bootstrap",
     "keywords": [
@@ -36,7 +36,8 @@
         "url": "https://github.com/StartBootstrap/startbootstrap-small-business.git"
     },
     "dependencies": {
-        "bootstrap": "5.2.3"
+        "bootstrap": "5.2.3",
+        "serve": "^14.2.3"
     },
     "devDependencies": {
         "autoprefixer": "10.4.14",
