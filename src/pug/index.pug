@@ -1,96 +1,422 @@
 doctype html
 html(lang='en')
-
     head
-
         meta(charset='utf-8')
         meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
         meta(name='description', content='')
         meta(name='author', content='')
-
-        title Small Business - Start Bootstrap Template
-
+        title IBM Cloud USNM Home Page
         // Favicon
-        link(rel='icon', type='image/x-icon', href='assets/favicon.ico')
-
+        link(rel='icon', type='image/x-icon', href='assets/cloud.png')
         // Core theme CSS (includes Bootstrap)
         link(href='css/styles.css', rel='stylesheet')
+        style.
+            .news-item {
+                transition: opacity 0.3s ease;
+            }
+            .news-ticker {
+                display: flex;
+                width: 100%;
+            }
 
     body
-
         // Responsive navbar
         nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
             .container.px-5
-                a.navbar-brand(href='#!') Start Bootstrap
+                a.navbar-brand(href='https://cloud.ibm.com/login', target='_blank') IBM Cloud
                 button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
                     span.navbar-toggler-icon
                 #navbarSupportedContent.collapse.navbar-collapse
                     ul.navbar-nav.ms-auto.mb-2.mb-lg-0
                         li.nav-item
-                            a.nav-link.active(aria-current='page', href='#!') Home
-                        li.nav-item
-                            a.nav-link(href='#!') About
-                        li.nav-item
-                            a.nav-link(href='#!') Contact
-                        li.nav-item
-                            a.nav-link(href='#!') Services
+                            a.navbar-brand(aria-current='page', href='https://w3.ibm.com', target='_blank') w3.ibm.com
 
         // Page Content
         .container.px-4.px-lg-5
-
             // Heading Row
             .row.gx-4.gx-lg-5.align-items-center.my-5
                 .col-lg-7
-                    img.img-fluid.rounded.mb-4.mb-lg-0(src='https://dummyimage.com/900x400/dee2e6/6c757d.jpg', alt='...')
-
+                    img.img-fluid.rounded.mb-4.mb-lg-0(src='https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/creative-assets/s-migr/ul/g/9a/8a/cloud-computing-services-and-solutions-leadspace.component.xl.ts=1739368993520.png/content/adobe-cms/us/en/solutions/cloud-compute/_jcr_content/root/leadspace_container/leadspace', alt='...')
                 .col-lg-5
-                    h1.font-weight-light Business Name or Tagline
-                    p
-                        | This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!
-                    a.btn.btn-primary(href='#!') Call to Action!
+                    h1.font-weight-light.text-center US National Market Technical Sales
+                    p.text-center Welcome! As a sales-driven team, we help businesses leverage IBM Cloud's enterprise-grade solutions to solve real-world challenges — whether it's modernizing infrastructure, optimizing costs, or accelerating digital transformation.
 
             // Call to Action
-            .card.text-white.bg-secondary.my-5.py-4.text-center
-                .card-body
-                    p.text-white.m-0
-                        | This call to action card is a great place to showcase some important information or display a clever tagline!
+            .card.my-5.text-white
+                .card-header.d-flex.justify-content-center.align-items-center(style='background-color: #6D7CFF')
+                    h5.mb-0.text-center November 6, 2025 Update
+                    .position-absolute.end-0.me-3
+                        button.btn.btn-sm.btn-outline-light.me-2(id='prevNews', type='button')
+                            i.bi.bi-chevron-left
+                        button.btn.btn-sm.btn-outline-light(id='nextNews', type='button')
+                            i.bi.bi-chevron-right
+                .card-body.p-0
+                    .news-ticker-wrapper.bg-secondary(style='overflow: hidden;')
+                        .news-ticker.d-flex(style='transition: transform 0.3s ease;')
+                            // News Item 1
+                            .news-item.p-4(style='min-width: 100%;')
+                                h6 News 1
+                                ul.mb-0
+                                    li New cloud migration tools now available
+                                    li Upcoming team training session on October 5th
+                                    li Q4 sales targets and incentives announced
+                            // News Item 2
+                            .news-item.p-4(style='min-width: 100%;')
+                                h6 News 2
+                                ul.mb-0
+                                    li Team meeting highlights and action items
+                                    li New case studies added to the resource library
+                                    li Customer success story: Cloud migration case study
+                            // News Item 3
+                            .news-item.p-4(style='min-width: 100%;')
+                                h6 News 3
+                                ul.mb-0
+                                    li Monthly performance review summary
+                                    li New product features released
+                                    li Upcoming holiday schedule
+
+            // Quick Links Grid
+            .container.my-5
+                h2.text-center.mb-4 Quick Links
+                .row.g-4
+                    // First Row
+                    .col-6.col-sm-4.col-md-3.col-lg-2
+                        a.quick-link-card.d-flex.flex-column.align-items-center.justify-content-center.p-3.text-decoration-none.text-center(href='https://ibmsc.lightning.force.com/lightning/page/home', target='_blank')
+                            img.mb-2(src='assets/salesforce.png', alt='Icon 2', width='40', height='40')
+                            span IBM Sales Cloud
+                    .col-6.col-sm-4.col-md-3.col-lg-2
+                        a.quick-link-card.d-flex.flex-column.align-items-center.justify-content-center.p-3.text-decoration-none.text-center(href='https://w3.ibm.com/finance/tools/salesperformance/fms/home', target='_blank')
+                            img.mb-2(src='assets/isi3.png', alt='Icon 2', width='40', height='40')
+                            span IBM Sales Incentives
+                    .col-6.col-sm-4.col-md-3.col-lg-2
+                        a.quick-link-card.d-flex.flex-column.align-items-center.justify-content-center.p-3.text-decoration-none.text-center(href='https://ibm.ent.box.com/', target='_blank')
+                            img.mb-2(src='assets/box1.avif', alt='Icon 1', width='40', height='40')
+                            span Box
+                    .col-6.col-sm-4.col-md-3.col-lg-2
+                        a.quick-link-card.d-flex.flex-column.align-items-center.justify-content-center.p-3.text-decoration-none.text-center(href='https://w3.ibm.com/sales/gtm-navigator/login', target='_blank')
+                            img.mb-2(src='assets/crop2.png', alt='Icon 2', width='40', height='40')
+                            span GTM Navigator
+                    .col-6.col-sm-4.col-md-3.col-lg-2
+                        a.quick-link-card.d-flex.flex-column.align-items-center.justify-content-center.p-3.text-decoration-none.text-center(href='https://w3.ibm.com/w3publisher/global-digital-sales/sales-tools/social-selling/linkedin-sales-navigator', target='_blank')
+                            img.mb-2(src='assets/linkedin.png', alt='Icon 2', width='40', height='40')
+                            span LinkedIn Sales Nav Guide
+                    .col-6.col-sm-4.col-md-3.col-lg-2
+                        a.quick-link-card.d-flex.flex-column.align-items-center.justify-content-center.p-3.text-decoration-none.text-center(href='https://ibm.seismic.com/app#/doccenter/5477419a-9474-4c51-94af-b442e9169fab/doc/%252Fdd98c5a3df-6b7c-1d77-6f07-d12e63954c78%252FdfOTRiYmU4NTQtNWY4NC03Y2QyLWZjYWUtOGIxYmFmZjkyZThk%252CPT0%253D%252CU29jaWFsIHNlbGxpbmc%253D%252Flfbbd0111c-acb5-4650-bf0d-3bee77c25d27//?mode=view&searchId=b2d4deb0-13c1-4195-84eb-02703d510582&anchorId=342695f7-9bfa-4d41-a51f-568173e11c05', target='_blank')
+                            img.mb-2(src='assets/zoominfo.png', alt='Icon 2', width='40', height='40')
+                            span ZoomInfo Guide
+                    .col-6.col-sm-4.col-md-3.col-lg-2
+                        a.quick-link-card.d-flex.flex-column.align-items-center.justify-content-center.p-3.text-decoration-none.text-center(href='https://ibm.seismic.com/app#/doccenter/5477419a-9474-4c51-94af-b442e9169fab/doc/%25252Fdd98c5a3df-6b7c-1d77-6f07-d12e63954c78%25252FdfOTRiYmU4NTQtNWY4NC03Y2QyLWZjYWUtOGIxYmFmZjkyZThk%25252CPT0%25253D%25252CUm91bmR1cCBvciBzdW1tYXJ5%25252Flfbc65a0a2-c277-4f67-95ea-1e4573f7debc//?mode=view&searchId=1a93a9c6-9c88-44a8-821a-4ab40aa519eb&anchorId=357893c9-1317-41e9-8e22-9d06d6cb4cb1', target='_blank')
+                            img.mb-2(src='assets/salesloft.svg', alt='Icon 2', width='40', height='40')
+                            span Salesloft
+                    .col-6.col-sm-4.col-md-3.col-lg-2
+                        a.quick-link-card.d-flex.flex-column.align-items-center.justify-content-center.p-3.text-decoration-none.text-center(href='https://ibm.seismic.com', target='_blank')
+                            img.mb-2(src='assets/seismic.png', alt='Icon 2', width='40', height='40')
+                            span Seismic
+                    .col-6.col-sm-4.col-md-3.col-lg-2
+                        a.quick-link-card.d-flex.flex-column.align-items-center.justify-content-center.p-3.text-decoration-none.text-center(href='https://w3.ibm.com/#/apps/travel', target='_blank')
+                            img.mb-2(src='assets/cc.png', alt='Icon 2', width='40', height='40')
+                            span SAP Concur
+                    .col-6.col-sm-4.col-md-3.col-lg-2
+                        a.quick-link-card.d-flex.flex-column.align-items-center.justify-content-center.p-3.text-decoration-none.text-center(href='https://w3.ibm.com/#/apps/accesshub', target='_blank')
+                            img.mb-2(src='assets/access.svg', alt='Icon 2', width='40', height='40')
+                            span AccessHub
+                    .col-6.col-sm-4.col-md-3.col-lg-2
+                        a.quick-link-card.d-flex.flex-column.align-items-center.justify-content-center.p-3.text-decoration-none.text-center(href='https://yourlearning.ibm.com/', target='_blank')
+                            img.mb-2(src='assets/yl2.png', alt='Icon 2', width='40', height='40')
+                            span YourLearning
+                    .col-6.col-sm-4.col-md-3.col-lg-2
+                        a.quick-link-card.d-flex.flex-column.align-items-center.justify-content-center.p-3.text-decoration-none.text-center(href='https://internal.cloud-solutioning.ibm.com/', target='_blank')
+                            img.mb-2(src='assets/Cool.png', alt='Icon 2', width='40', height='40')
+                            span COOL Tool (Internal)
 
             // Content Row
             .row.gx-4.gx-lg-5
                 .col-md-4.mb-5
                     .card.h-100
                         .card-body
-                            h2.card-title Card One
-                            p.card-text
-                                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.
-                        .card-footer
-                            a.btn.btn-primary.btn-sm(href='#!') More Info
-
+                            h2.card-title.text-center Team Essentials
+                            ul
+                                li Link 1: How to Close Your Sales Plan Gap
+                                li Link 2: Collaborating for Growth
+                                li Link 3: Org Chart - 2025 USNM IBM Cloud Territory Details
+                                li Link 4: ISC Hygiene
+                                li Link 5: Fast Start 2025
+                                li Link 6: Order Entry and Deal Processing Guidance
+                        .card-footer.text-center
+                            a.btn.btn-sm.me-2(target='_blank', href='https://ibm.box.com/s/aeclujfonuf894zxax9bbcawdace6fc6', style='background-color: #6D7CFF; color: white;') Link 1
+                            a.btn.btn-sm.me-2(target='_blank', href='https://ibm.box.com/s/d27edxhy801tjprqmyg0yndctnyqbze7', style='background-color: #6D7CFF; color: white;') Link 2
+                            a.btn.btn-sm.me-2(target='_blank', href='https://docs.google.com/presentation/d/1BOBpbVMsRDsp3ZEtr0LBoKIhJHsmzeNx/edit?usp=sharing&ouid=110597760562183888474&rtpof=true&sd=true', style='background-color: #6D7CFF; color: white;') Link 3
+                            a.btn.btn-sm.me-2(target='_blank', href='https://ibm.box.com/s/axbmrtspvwbfmmjqhfe1ho1waa4qxtbf', style='background-color: #6D7CFF; color: white;') Link 4
+                            a.btn.btn-sm.me-2(target='_blank', href='https://ibm.seismic.com/Link/Content/DCfQfBPXJfj9p8qGpjTcgJ2BTC6d', style='background-color: #6D7CFF; color: white;') Link 5
+                            a.btn.btn-sm.me-2(target='_blank', href='https://ibm.box.com/s/x8bc8ulbmonbz9f3kg1j2quc7om8jwqf', style='background-color: #6D7CFF; color: white;') Link 6
                 .col-md-4.mb-5
                     .card.h-100
                         .card-body
-                            h2.card-title Card Two
-                            p.card-text
-                                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.
-                        .card-footer
-                            a.btn.btn-primary.btn-sm(href='#!') More Info
-
+                            h2.card-title.text-center Cloud Newsletter
+                            p.card-text.text-center Monthly updates from leadership on YTD performance, tips, team recognition, upcoming events, important deadlines, etc.
+                        .card-footer.text-center
+                            a.btn.btn-sm(href='https://ibm.ent.box.com/folder/297077003973?box_action=go_to_item&box_source=legacy-notify_existing_collab_folder&s=ptmrgsujwqr7wsq60jjgvjlchlqxzf5i', target='_blank', style='background-color: #6D7CFF; color: white;') Link
                 .col-md-4.mb-5
                     .card.h-100
                         .card-body
-                            h2.card-title Card Three
-                            p.card-text
-                                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.
-                        .card-footer
-                            a.btn.btn-primary.btn-sm(href='#!') More Info
+                            h2.card-title.text-center C.A.R.
+                            p.card-text.text-center Your Client Asset Repository of files produced during every sales cycle, to:
+                            ul
+                                li Improve visibility of tasks completed vs tasks remaining, with a goal of increasing win rate through technical excellence
+                                li Simplify peer to peer knowledge sharing and reducing hours spent "recreating the wheel"
+                                li Optimize the hours spent cadencing with leadership
+                        .card-footer.text-center
+                            a.btn.btn-sm(target='_blank', href='https://ibm.ent.box.com/folder/274187017567', style='background-color: #6D7CFF; color: white;') Link
+
+            .row.gx-4.gx-lg-5
+                .col-md-4.mb-5
+                    .card.h-100
+                        .card-body
+                            h2.card-title.text-center Associated Orgs
+                            ul
+                                li Link 1: IBM Public Cloud Seismic Home Page
+                                li Link 2: IBM Technology Expert Labs - Cloud
+                                li Link 3: IBM Client Engineering
+                                li Link 4: IBM Cloud Customer Success
+                                li Link 5: IBM Cloud Ecosystem Team
+                                li Link 6: IBM Cloud Solutioning Team
+                        .card-footer.text-center
+                            a.btn.btn-sm.me-2(target='_blank', href='https://ibm.seismic.com/Link/Content/DC3jQTRBDRhCGG7BX6pCHqBbdqHG', style='background-color: #6D7CFF; color: white;') Link 1
+                            a.btn.btn-sm.me-2(target='_blank', href='https://ibm.seismic.com/Link/Content/DC8CDmWFfpWC78hQj8qCF4V9CcpB', style='background-color: #6D7CFF; color: white;') Link 2
+                            a.btn.btn-sm.me-2(target='_blank', href='https://ibm.seismic.com/Link/Content/DCBQFPGV6TBTqGFC9JWWpfVgHBc8', style='background-color: #6D7CFF; color: white;') Link 3
+                            a.btn.btn-sm.me-2(target='_blank', href='https://w3.ibm.com/w3publisher/new-pc-csm-americas-site', style='background-color: #6D7CFF; color: white;') Link 4
+                            a.btn.btn-sm.me-2(target='_blank', href='https://docs.google.com/presentation/d/1bM11LmXgbC32f0gOtggY-J-kPwvdWDWD/edit?usp=sharing&ouid=110597760562183888474&rtpof=true&sd=true', style='background-color: #6D7CFF; color: white;') Link 5
+                            a.btn.btn-sm.me-2(target='_blank', href='https://forms.monday.com/forms/fa5c83bd5903abbc856850bcd653fa82?r=use1', style='background-color: #6D7CFF; color: white;') Link 6
+                .col-md-4.mb-5
+                    .card.h-100
+                        .card-body
+                            h2.card-title.text-center POC Guidance
+                            p.card-text.text-center Minimize delays and maximize client engagement. This page acts as guidance on how to navigate the approval process for a IBM Cloud POC environment with respect to our strategic sales plays.
+                        .card-footer.text-center
+                            a.btn.btn-sm(href='https://w3.ibm.com/w3publisher/ibm-cloud-sales-poc/ibm-public-cloud-sales-promos-pocs', target='_blank', style='background-color: #6D7CFF; color: white;') Link
+                .col-md-4.mb-5
+                    .card.h-100
+                        .card-body
+                            h2.card-title.text-center Business Partners
+                            p.card-text.text-center A list detailing our authorized IBM Business Partners for the resale of IBM Cloud products and services. These partners significantly contribute to our ecosystem by also offering their own managed services and, in some cases, by developing proprietary tile offerings leveraging our core technologies.
+                        .card-footer.text-center
+                            a.btn.btn-sm(target='_blank', href='https://docs.google.com/spreadsheets/d/1LBRAccnAZR3pUxqvR4MOQK0BiH325upI/edit?usp=sharing&ouid=110597760562183888474&rtpof=true&sd=true', style='background-color: #6D7CFF; color: white;') Link
+
+        .container.px-4.px-lg-5.my-5
+            h2.text-center.mb-5 Sales Plays
+
+            // First Row
+            .row.g-4.mb-4
+                .col-md-6
+                    .card.h-100.border-0.shadow.rounded-4.p-4
+                        .card-body.text-center
+                            h4.card-title.mb-4 Power Virtual Server
+                            ul.list-unstyled
+                                li.mb-2: a(target='_blank', href='https://ibm.seismic.com/Link/Content/DCm38jQc9CHm4G9Wdp23V76pWPPV') Seismic Sales Kit
+                                li.mb-2: a(target='_blank', href='https://ibm.seismic.com/Link/Content/DC66cHW6FmGFGGQQ7PVGm8M3HGPV') Rise with SAP on PowerVS
+                                br
+                                li.mb-2: a(target='_blank', href='https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-getting-started') Cloud Docs
+                                br
+                                li.mb-2: a(target='_blank', href='https://w3.ibm.com/systems/productpages/index.html?name=%22IBM%20Power%20Virtual%20Server%20on%20IBM%20Cloud%22&ppId=F6FED670E90311E8BE8AD213A3013DB3&str=power') Product Pages - PowerVS
+                                li.mb-2: a(target='_blank', href='https://w3.ibm.com/systems/productpages/index.html?name=%22Power%20Virtual%20Server%20DR%20Automation%22&ppId=E2BDBD267E8D40CC9DB20844835F6431&str=power') Product Pages - DR Automation
+                                li.mb-2: a(target='_blank', href='https://w3.ibm.com/systems/productpages/index.html?name=%22IBM%20i%20Managed%20on%20Power%20Virtual%20Server%22&ppId=DB02BBED5B454376A16456C7A1E95A72&str=power') Product Pages - IBM i Managed on PowerVS
+                                br
+                                li.mb-2: a(target='_blank', href='https://yourlearning.ibm.com/activity/PLAN-4E64FE2FDBF0') YourLearning - PowerVS Sales Foundation
+                                li.mb-2: a(target='_blank', href='https://yourlearning.ibm.com/activity/PLAN-4B40F6E200BA') YourLearning - PowerVS Technical Sales Intermediate
+                                li.mb-2: a(target='_blank', href='https://yourlearning.ibm.com/activity/PLAN-E026C3AD0464') YourLearning - PowerVS Technical Sales Advanced
+                                li.mb-2: a(target='_blank', href='https://yourlearning.ibm.com/activity/PLAN-A7B2BFED5813') YourLearning - PowerVS Speciality
+                                br
+                                li.mb-2: a(target='_blank', href='https://learn.ibm.com/mod/book/view.php?id=332137') PowerVS Quoting Guidance
+                .col-md-6
+                    .card.h-100.border-0.shadow.rounded-4.p-4
+                        .card-body.text-center
+                            h4.card-title.mb-4 High Performance Computing
+                            ul.list-unstyled
+                                li.mb-2: a(target='_blank', href='https://ibm.seismic.com/Link/Content/DCCXCgbB6dPCF8CTg8HQ3WjgHf2d') Seismic Sales Kit
+                                br
+                                li.mb-2: a(target='_blank', href='https://cloud.ibm.com/docs/ibm-spectrum-lsf?topic=ibm-spectrum-lsf-getting-started-tutorial') Cloud Docs - Spectrum LSF
+                                li.mb-2: a(target='_blank', href='https://cloud.ibm.com/docs/hpc-spectrum-symphony?topic=hpc-spectrum-symphony-getting-started-tutorial') Cloud Docs - Spectrum Symphony
+                                br
+                                li.mb-2: a(target='_blank', href='https://w3.ibm.com/systems/productpages/index.jsp?name=%22IBM%20Spectrum%20LSF%20Suite%20for%20HPC%22&ppId=D539BFD731724EB493CC8F822E034AF2&str=hpc') Product Pages - IBM Spectrum LSF Suite for HPC
+                                li.mb-2: a(target='_blank', href='https://w3.ibm.com/systems/productpages/index.jsp?name=%22IBM%20Spectrum%20Symphony%22&ppId=1482645A6A684FDB84A72DFFD2D0DD07&str=IBM%20Spectrum%20symphony') Product Pages - IBM Spectrum Symphony
+                                br
+                                li.mb-2: a(target='_blank', href='https://yourlearning.ibm.com/activity/AB-A85A036D9821') YourLearning - IBM Cloud HPC
+                                li.mb-2: a(target='_blank', href='https://yourlearning.ibm.com/credential/CREDLY-55d207b1-5ad1-47df-b850-85d6b00d2462') YourLearning - Spectrum Symphony
+                                li.mb-2: a(target='_blank', href='https://yourlearning.ibm.com/credential/CREDLY-25964c00-6dbf-479f-aa64-2d8891c0c624') YourLearning - Spectrum LSF Technical Sales Intermediate
+
+            // Second Row
+            .row.g-4
+                .col-md-6
+                    .card.h-100.border-0.shadow.rounded-4.p-4
+                        .card-body.text-center
+                            h4.card-title.mb-4 AI Infrastructure & GPUs
+                            ul.list-unstyled
+                                li.mb-2: a(target='_blank', href='https://ibm.seismic.com/app#/doccenter/861ea1fd-99e0-44d7-9135-85412e5c28d1/doc/%252Fdd3359e5f7-a856-a91b-7688-41024b2ac637%252FdfNTY4NmVhOWItY2RkNS04ZWY3LTZkNzItZTQwZjczMWUyMjk1%252CPT0%253D%252CQ3Jvc3MgQnJhbmQ%253D%252FdfNDRmODBlMzMtY2ViMC0zMDI1LTVhNDEtNzg2OTg4MWVmZDBl%252COthers%252FdfOTRiYmU4NTQtNWY4NC03Y2QyLWZjYWUtOGIxYmFmZjkyZThk%252CPT0%253D%252CU2FsZXMga2l0%252Flf3414e95f-8b99-4cba-a122-518abf6205a8//?mode=view&searchId=d5f84053-52e3-4614-a3e6-fde8faf81b86&anchorId=334e2c03-cc0b-4181-9cb4-3af96c3944ec') Seismic Sales Kit
+                                br
+                                li.mb-2: a(target='_blank', href='https://cloud.ibm.com/docs/vpc?topic=vpc-managing-gpus') Cloud Docs - Managing GPUs and Accelerators
+                                br
+                                li.mb-2: a(target='_blank', href='https://w3.ibm.com/systems/productpages/index.html?name=%22IBM%20Cloud%20Virtual%20Server%20for%20VPC%22&ppId=0D8BECC0772511E9BAD1085830964175&str=IBM%20Cloud%20Virtual%20Server%20for%20VPC') Product Pages - Virtual Server for VPC
+                                br
+                                li.mb-2: a(target='_blank', href='https://yourlearning.ibm.com/credential/CREDLY-eb893eb3-65d9-41a8-b71b-a1db94821573') YourLearning - IBM Cloud AI-Ready Infrastructure Foundations
+                .col-md-6
+                    .card.h-100.border-0.shadow.rounded-4.p-4
+                        .card-body.text-center
+                            h4.card-title.mb-4 Modernization
+                            ul.list-unstyled
+                                li.mb-2: a(target='_blank', href='https://ibm.seismic.com/Link/Content/DCDQHRR3m2CcC87PR2pW8X6VFhDV') Seismic Sales Kit
+                                br
+                                li.mb-2: a(target='_blank', href='https://cloud.ibm.com/docs/openshift?topic=openshift-getting-started') Cloud Docs - Red Hat OpenShift
+                                li.mb-2: a(target='_blank', href='https://cloud.ibm.com/docs/containers?topic=containers-getting-started') Cloud Docs - IBM Kubernetes Service
+                                br
+                                li.mb-2: a(target='_blank', href='https://w3.ibm.com/systems/productpages/index.jsp?name=%22IBM%20Cloud%20Kubernetes%20Service%20and%20Red%20Hat%20OpenShift%20on%20IBM%20Cloud%22&ppId=4440E450C2C811E6A98AAE81A233E762&str=kubernetes') Product Pages - IBM Cloud Kubernetes Service and Red Hat OpenShift
+                                br
+                                li.mb-2: a(target='_blank', href='https://yourlearning.ibm.com/activity/PLAN-2B46F61F3D76') YourLearning - A Beginner's Guide to Kubernetes and OpenShift
+                                li.mb-2: a(target='_blank', href='https://yourlearning.ibm.com/activity/ILB-WWXXGGMDEMMV97XR') YourLearning - Red Hat OpenShift
+                                li.mb-2: a(target='_blank', href='https://yourlearning.ibm.com/activity/ITS-DL70366G') YourLearning - IBM Cloud Kubernetes Service
+                                li.mb-2: a(target='_blank', href='https://ibm.box.com/s/mbrbn9j48i1a72ilf5jmy5pu8t0c2jib') Workload Optimization & Virtualization Deck
 
         // Footer
         footer.py-5.bg-dark
             .container.px-4.px-lg-5
-                p.m-0.text-center.text-white Copyright &copy; Your Website 2023
+                p.m-0.text-center.text-white Copyright &copy; IBM 2025
+            .container.px-4.px-lg-5
+                p.m-0.text-center.text-white Pranav Ramesh
 
         // Bootstrap core JS
         script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js')
 
         // Core theme JS
         script(src='js/scripts.js')
+
+        script.
+            document.addEventListener('DOMContentLoaded', function() {
+                const newsTicker = document.querySelector('.news-ticker');
+                const newsItems = document.querySelectorAll('.news-item');
+                const prevBtn = document.getElementById('prevNews');
+                const nextBtn = document.getElementById('nextNews');
+                let currentIndex = 0;
+                const totalItems = newsItems.length;
+                let autoScrollInterval;
+            
+                function updateNewsPosition() {
+                    newsTicker.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    prevBtn.disabled = currentIndex === 0;
+                    nextBtn.disabled = currentIndex === totalItems - 1;
+                }
+            
+                function nextSlide() {
+                    if (currentIndex < totalItems - 1) {
+                        currentIndex++;
+                    } else {
+                        currentIndex = 0; // Loop back to the first item
+                    }
+                    updateNewsPosition();
+                }
+            
+                function prevSlide() {
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                        updateNewsPosition();
+                    }
+                }
+            
+                // Auto-scroll functionality
+                function startAutoScroll() {
+                    autoScrollInterval = setInterval(nextSlide, 5000); // Change slide every 3 seconds
+                }
+            
+                function stopAutoScroll() {
+                    clearInterval(autoScrollInterval);
+                }
+            
+                // Event listeners
+                prevBtn.addEventListener('click', () => {
+                    stopAutoScroll();
+                    prevSlide();
+                    startAutoScroll();
+                });
+            
+                nextBtn.addEventListener('click', () => {
+                    stopAutoScroll();
+                    nextSlide();
+                    startAutoScroll();
+                });
+            
+                // Pause auto-scroll when hovering over the ticker
+                const tickerContainer = document.querySelector('.news-ticker-wrapper');
+                tickerContainer.addEventListener('mouseenter', stopAutoScroll);
+                tickerContainer.addEventListener('mouseleave', startAutoScroll);
+            
+                // Initialize
+                updateNewsPosition();
+                startAutoScroll(); // Start auto-scrolling
+            });
+
+        style.
+            .card-footer .btn {
+                margin: 0 5px 10px; /* Top, right/left, bottom */
+            }
+
+            .quick-link-card {
+                background: white;
+                border: 1px solid #e0e0e0;
+                border-radius: 8px;
+                height: 120px;
+                transition: all 0.3s ease;
+                color: #333;
+            }
+            
+            .quick-link-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                background-color: #f8f9fa;
+                color: #0d6efd;
+            }
+            
+            .quick-link-card img {
+                transition: transform 0.3s ease;
+            }
+            
+            .quick-link-card:hover img {
+                transform: scale(1.1);
+            }
+            /* Add this to your existing style tag */
+            
+            .btn {
+                transition: all 0.3s ease;
+            }
+
+            .btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                opacity: 0.9;
+            }
+
+            /* Specific style for the #6D7CFF buttons */
+            .btn[style*="background-color: #6D7CFF"]:hover {
+                background-color: #5a6be0 !important; /* Slightly darker shade on hover */
+            }
+            .navbar-brand {
+                transition: color 0.3s ease;
+                position: relative;
+                padding: 0.5rem 0;
+            }
+
+            .navbar-brand:hover {
+                color: #5a6be0 !important; /* Bootstrap primary blue */
+            }
+
+            .navbar-brand::after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: #5a6be0;
+                transition: width 0.3s ease;
+            }
+
+            .navbar-brand:hover::after {
+                width: 100%;
+            }
